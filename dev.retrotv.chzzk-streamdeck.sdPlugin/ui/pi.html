@@ -1,0 +1,39 @@
+<!-- Property Inspector HTML (pi.html) -->
+<sdpi-wrapper>
+    <sdpi-item>
+        <sdpi-item-label>Client ID</sdpi-item-label>
+        <sdpi-item-value>
+            <input id="client_id" type="text">
+        </sdpi-item-value>
+    </sdpi-item>
+    <sdpi-item>
+        <sdpi-item-label>Client PW</sdpi-item-label>
+        <sdpi-item-value>
+            <input id="client_pw" type="password">
+        </sdpi-item-value>
+    </sdpi-item>
+    <sdpi-item>
+        <sdpi-item-value>
+            <button id="login_btn">로그인 및 토큰 발급</button>
+        </sdpi-item-value>
+    </sdpi-item>
+    <sdpi-item>
+        <sdpi-item-value>
+            <div id="status" style="padding: 10px; color: orange;">로그인 필요</div>
+        </sdpi-item-value>
+    </sdpi-item>
+</sdpi-wrapper>
+
+<script>
+    // 버튼 클릭 시 입력값을 백엔드로 전달
+    document.getElementById('login_btn').onclick = function() {
+        const clientId = document.getElementById('client_id').value;
+        const clientPw = document.getElementById('client_pw').value;
+
+        // Stream Deck API를 통해 백엔드(Plugin)로 메시지 전송
+        $SD.emit("sendToPlugin", {
+            action: "authenticate",
+            payload: { clientId, clientPw }
+        });
+    };
+</script>

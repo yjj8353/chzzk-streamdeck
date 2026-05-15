@@ -1,0 +1,63 @@
+{
+	"Name": "Chzzk Streamdeck",
+	"Version": "0.1.0.0",
+	"Author": "RetroTV",
+	"Actions": [
+		{
+			"Name": "Counter",
+			"UUID": "dev.retrotv.chzzk-streamdeck.increment",
+			"Icon": "imgs/actions/counter/icon",
+			"Tooltip": "Displays a count, which increments by one on press.",
+			"PropertyInspectorPath": "ui/increment-counter.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		},
+		{
+			"Name": "Login",
+			"UUID": "dev.retrotv.chzzk-streamdeck.login",
+			"Icon": "imgs/actions/login/icon",
+			"Tooltip": "로그인",
+			"PropertyInspectorPath": "ui/pi.html",
+			"Controllers": [
+				"Keypad"
+			],
+			"States": [
+				{
+					"Image": "imgs/actions/counter/key",
+					"TitleAlignment": "middle"
+				}
+			]
+		}
+	],
+	"Category": "Chzzk Streamdeck",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"CodePath": "bin/plugin.js",
+	"Description": "스트림덱 용 치지직 플러그인",
+	"Icon": "imgs/plugin/marketplace",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Nodejs": {
+		"Version": "24",
+		"Debug": "enabled"
+	},
+	"UUID": "dev.retrotv.chzzk-streamdeck"
+}
